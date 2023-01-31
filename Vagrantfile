@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure('2') do |config|
-  config.vm.box = 'ubuntu/focal64'
+  config.vm.box = 'bento/ubuntu-22.04'
 
   # define manager nodes
   (1..8).each do |number|
