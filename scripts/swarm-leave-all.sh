@@ -7,13 +7,13 @@ leave() {
 }
 
 # workers
-leave node2
-leave node3
 leave node5
 leave node6
+leave node7
 leave node8
 
 # managers
 leave node4
-leave node7
+leave node3
+leave node2
 leave node1

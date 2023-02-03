@@ -1,12 +1,15 @@
 #!/bin/bash
 
-vagrant suspend node1 &>/dev/null &
-vagrant suspend node2 &>/dev/null &
-vagrant suspend node3 &>/dev/null &
-vagrant suspend node4 &>/dev/null &
-vagrant suspend node5 &>/dev/null &
-vagrant suspend node6 &>/dev/null &
-vagrant suspend node7 &>/dev/null &
-vagrant suspend node8 &>/dev/null &
+echo # suspend managers
+vagrant suspend node1 &
+vagrant suspend node2 &
+vagrant suspend node3 &
+vagrant suspend node4 &
+wait
 
-jobs
+echo # suspend workers
+vagrant suspend node5 &
+vagrant suspend node6 &
+vagrant suspend node7 &
+vagrant suspend node8 &
+wait

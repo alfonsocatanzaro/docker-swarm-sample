@@ -1,12 +1,15 @@
 #!/bin/bash
 
-vagrant resume node1 &>/dev/null &
-vagrant resume node2 &>/dev/null &
-vagrant resume node3 &>/dev/null &
-vagrant resume node4 &>/dev/null &
-vagrant resume node5 &>/dev/null &
-vagrant resume node6 &>/dev/null &
-vagrant resume node7 &>/dev/null &
-vagrant resume node8 &>/dev/null &
+echo # resume workers
+vagrant resume node5 --no-provision &
+vagrant resume node6 --no-provision &
+vagrant resume node8 --no-provision &
+vagrant resume node7 --no-provision &
+wait
 
-jobs
+echo # resume managers
+vagrant resume node1 --no-provision &
+vagrant resume node2 --no-provision &
+vagrant resume node3 --no-provision &
+vagrant resume node4 --no-provision &
+wait
