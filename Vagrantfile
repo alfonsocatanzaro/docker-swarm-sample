@@ -5,7 +5,7 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'hashicorp/bionic64'
 
   # define manager nodes
-  (1..8).each do |number|
+  (1..5).each do |number|
     config.vm.define "node#{number}" do |node|
       node.vm.network 'private_network', ip: "192.168.99.20#{number}"
       node.vm.network 'forwarded_port', id: 'ssh', host: "820#{number}", guest: "22"
