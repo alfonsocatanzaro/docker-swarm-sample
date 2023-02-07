@@ -25,7 +25,9 @@ services:
         reservations:
           cpus: '0.25'
           memory: 512M
-
+      placement:
+        constraints:
+          - node.role == manager
   db:
     image: couchdb:2.3.0
     volumes:
