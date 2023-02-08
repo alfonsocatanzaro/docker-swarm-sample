@@ -1,0 +1,42 @@
+﻿@model BaseViewModel
+
+<div class="row bg-primary">
+    <div class="col">
+        Page created at: @Model.PageCreatedAt
+    </div>
+</div>
+
+<div class="row bg-secondary">
+    <div class="col">Frontend info</div>
+    <div class="col">Backend info</div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div>Hostname: @Model.Frontend.HostName</div>
+        <div>RemoteAddress: @Model.Frontend.RemoteAddress</div>
+        @foreach (var net in Model.Frontend.Adapters)
+        {
+            <div>@net.ToString()</div>
+        }
+    </div>
+    <div class="col">
+        <div>Hostname: @Model.Backend.HostName</div>
+        <div>RemoteAddress: @Model.Backend.RemoteAddress</div>
+        @foreach (var net in Model.Backend.Adapters)
+        {
+            <div>@net.ToString()</div>
+        }
+    </div>
+
+</div>
+<div class="row bg-warning">
+    <div class="col">Weather Forecast (from backend)</div>
+</div>
+
+@foreach (var item in Model.WeatherForecast)
+{
+    <div class="row">
+        <div class="col">@item.Date.ToString() @item.Summary (@item.TemperatureC)</div>
+    </div>
+}

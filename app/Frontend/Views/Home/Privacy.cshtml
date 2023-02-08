@@ -1,0 +1,9 @@
+﻿@model BaseViewModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Privacy Policy</h1>
+    @await Html.PartialAsync("_data.cshtml", Model)
+</div>
