@@ -356,3 +356,6 @@ MigrationBackup/
 
 #
 portainer/.key
+
+# Environment
+.env
